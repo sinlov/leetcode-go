@@ -1,4 +1,4 @@
-[![go-ubuntu](https://github.com/sinlov/leetcode-go/workflows/go-ubuntu/badge.svg?branch=main)](https://github.com/sinlov/golang-project-temple-base/actions)
+[![go-ubuntu](https://github.com/sinlov/leetcode-go/workflows/go-ubuntu/badge.svg?branch=main)](https://github.com/sinlov/leetcode-go/actions)
 [![GoReportCard](https://goreportcard.com/badge/github.com/sinlov/leetcode-go)](https://goreportcard.com/report/github.com/sinlov/leetcode-go)
 [![codecov](https://codecov.io/gh/sinlov/leetcode-go/branch/main/graph/badge.svg)](https://codecov.io/gh/sinlov/leetcode-go)
 

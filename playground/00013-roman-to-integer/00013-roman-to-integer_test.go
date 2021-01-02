@@ -1,13 +1,18 @@
 package _0013_roman_to_integer
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_romanToInt(t *testing.T) {
 	// mock romanToInt
 	qs := []question{
+		{
+			param{""},
+			answer{0},
+		},
 		{
 			param{"III"},
 			answer{3},

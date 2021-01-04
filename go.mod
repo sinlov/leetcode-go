@@ -1,4 +1,4 @@
-module github.com/bridgewwater/golang-project-temple-base
+module github.com/sinlov/leetcode-go
 
 go 1.15
 

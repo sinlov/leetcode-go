@@ -4,7 +4,7 @@
 
 ## for what
 
-- this project used to github golang
+- this project for [leetcode-cn](https://leetcode-cn.com/) in go
 
 ## depends
 

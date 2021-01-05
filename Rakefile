@@ -107,4 +107,20 @@ task :leetcode do
     post.puts "}"
   end
 
+  puts "Creating new answer documentation: README.md"
+  target_answer_file = File.join(target_folder, "README.md")
+  if File.exist?(target_answer_file)
+    abort("rake aborted! #{target_answer_file} not overwrite") if ask("#{target_answer_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
+  end
+  open(target_answer_file, 'w') do |post|
+    post.puts "### 解题思路"
+    post.puts ""
+    post.puts ""
+    post.puts "### 代码"
+    post.puts ""
+    post.puts "```go"
+    post.puts ""
+    post.puts "```"
+  end
+
 end

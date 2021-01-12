@@ -5,6 +5,7 @@
 ## for what
 
 - this project for [leetcode-cn](https://leetcode-cn.com/) in go
+- project repo [https://github.com/sinlov/leetcode-go](https://github.com/sinlov/leetcode-go)
 
 ## depends
 

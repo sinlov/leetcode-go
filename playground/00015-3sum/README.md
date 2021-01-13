@@ -28,8 +28,8 @@ func threeSum(nums []int) [][]int {
 	if length < 3 { //ignore less then 3
 		return res
 	}
-	sort.Ints(nums)                                        // sort by go std pkg
-	if length > 0 && (nums[0] > 0 || nums[length-1] < 0) { // ignore must be 3-sum to 0， which sorted
+	sort.Ints(nums)                         // sort by go std pkg
+	if length > 0 && (nums[length-1] < 0) { // ignore must be 3-sum to 0， which sorted max number less than 0
 		return res
 	}
 
@@ -50,9 +50,9 @@ func threeSum(nums []int) [][]int {
 				continue
 			}
 			sumNumber := nums[start] + nums[end] + nums[index] // 3-sum
-			if sumNumber == 0 {                                //
+			if sumNumber == 0 {                                // mark to res
 				res = append(res, []int{nums[start], nums[index], nums[end]})
-				start++
+				start++ // each crash point move all
 				end--
 			} else if sumNumber > 0 { // to previous
 				end--

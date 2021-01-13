@@ -28,6 +28,10 @@ func Test_threeSum(t *testing.T) {
 			}},
 		},
 		{
+			param{[]int{-2, -3, -1}},
+			answer{make([][]int, 0)},
+		},
+		{
 			param{[]int{0, 0, 0}},
 			answer{[][]int{{0, 0, 0}}},
 		},

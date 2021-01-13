@@ -9,8 +9,8 @@ func threeSum(nums []int) [][]int {
 	if length < 3 { //ignore less then 3
 		return res
 	}
-	sort.Ints(nums)                                        // sort by go std pkg
-	if length > 0 && (nums[0] > 0 || nums[length-1] < 0) { // ignore must be 3-sum to 0， which sorted
+	sort.Ints(nums)                         // sort by go std pkg
+	if length > 0 && (nums[length-1] < 0) { // ignore must be 3-sum to 0， which sorted max number less than 0
 		return res
 	}
 

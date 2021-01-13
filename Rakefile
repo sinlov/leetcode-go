@@ -86,7 +86,7 @@ task :leetcode do
     post.puts "		res := #{problems_func}(p.one)"
     post.puts "		// verify #{problems_func}"
     post.puts "		assert.Equal(t, a.one, res,"
-    post.puts "			\"in [ %v ], out [%v]\", p.one, res)"
+    post.puts "			\"fail: in [ %v ], out [%v] , want [ %v ]\", p.one, res, a.one)"
     post.puts "	}"
     post.puts "	t.Logf(\"~> LeetCode #{problems_func} end\")"
     post.puts "}"

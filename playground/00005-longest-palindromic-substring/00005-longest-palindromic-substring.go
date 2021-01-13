@@ -15,7 +15,7 @@ func longestPalindrome(s string) string {
 	manacherStr := toManacherStr(s)
 
 	var path = make([]int, len(manacherStr))
-	for i, _ := range manacherStr {
+	for i := range manacherStr {
 		if i < rPoint {
 			lg := path[2*id-i]
 			if rPoint-i < lg {

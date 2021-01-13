@@ -31,9 +31,9 @@ func threeSum(nums []int) [][]int {
 				continue
 			}
 			sumNumber := nums[start] + nums[end] + nums[index] // 3-sum
-			if sumNumber == 0 {                                //
+			if sumNumber == 0 {                                // mark to res
 				res = append(res, []int{nums[start], nums[index], nums[end]})
-				start++
+				start++ // each crash point move all
 				end--
 			} else if sumNumber > 0 { // to previous
 				end--

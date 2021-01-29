@@ -162,3 +162,6 @@ helpProjectRoot:
 help: helpGoMod helpDockerRun helpGoAction helpProjectRoot
 	@echo ""
 	@echo "-- more info see Makefile include: MakeGoMod.mk MakeDockerRun.mk --"
+	@echo ""
+	@echo "fast make leetcode playground see"
+	@echo "rake -T"

@@ -4,3 +4,9 @@ dist/
 build/
 .idea/
 .vsc/
+.github/
+codecov.yml
+
+.clocignore
+.dockerignore
+.gitignore

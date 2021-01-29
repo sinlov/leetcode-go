@@ -50,7 +50,7 @@ task :leetcode do
   if File.exist?(target_src_file)
     abort("rake aborted! #{target_src_file} not overwrite") if ask("#{target_src_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  puts "Creating new source: #{target_src_file}"
+  puts "Creating #{problems_title} source: #{target_src_file}"
   open(target_src_file, 'w') do |post|
     post.puts "package #{target_package_name}"
     post.puts ""
@@ -62,7 +62,7 @@ task :leetcode do
   if File.exist?(target_test_file)
     abort("rake aborted! #{target_test_file} not overwrite") if ask("#{target_test_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  puts "Creating new unit test: #{target_test_file}"
+  puts "Creating #{problems_title} unit test: #{target_test_file}"
   open(target_test_file, 'w') do |post|
     post.puts "package #{target_package_name}"
     post.puts ""
@@ -71,14 +71,16 @@ task :leetcode do
     post.puts "	\"testing\""
     post.puts ")"
     post.puts ""
-    post.puts "func Test_#{problems_func}(t *testing.T) {"
     post.puts "	// mock #{problems_func}"
-    post.puts "	qs := []question{"
-    post.puts "		{"
-    post.puts "			param{\"III\"},"
-    post.puts "			answer{3},"
-    post.puts "		},"
-    post.puts "	}"
+    post.puts ""
+    post.puts "var qs = []question{"
+    post.puts "	{"
+    post.puts "		param{\"III\"},"
+    post.puts "		answer{3},"
+    post.puts "	},"
+    post.puts "}"
+    post.puts ""
+    post.puts "func Test_#{problems_func}(t *testing.T) {"
     post.puts "	t.Logf(\"~> LeetCode #{problems_func} start\")"
     post.puts "	// do #{problems_func}"
     post.puts "	for _, q := range qs {"
@@ -89,6 +91,13 @@ task :leetcode do
     post.puts "			\"fail: in [ %v ], out [%v] , want [ %v ]\", p.one, res, a.one)"
     post.puts "	}"
     post.puts "	t.Logf(\"~> LeetCode #{problems_func} end\")"
+    post.puts "}"
+    post.puts ""
+    post.puts "func Benchmark_#{problems_func}(b *testing.B) {"
+    post.puts "	// do #{problems_func}"
+    post.puts "	for _, q := range qs {"
+    post.puts "		#{problems_func}(q.param.one)"
+    post.puts "	}"
     post.puts "}"
     post.puts ""
     post.puts "type question struct {"
@@ -107,8 +116,8 @@ task :leetcode do
     post.puts "}"
   end
 
-  puts "Creating new answer documentation: README.md"
   target_answer_file = File.join(target_folder, "README.md")
+  puts "Creating #{problems_title} answer documentation: #{target_answer_file}"
   if File.exist?(target_answer_file)
     abort("rake aborted! #{target_answer_file} not overwrite") if ask("#{target_answer_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end

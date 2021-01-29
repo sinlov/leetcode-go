@@ -68,11 +68,7 @@ func Test_searchRange(t *testing.T) {
 func Benchmark_searchRange(b *testing.B) {
 	// do searchRange
 	for _, q := range qs {
-		a, p := q.answer, q.param
-		res := searchRange(p.one, p.two)
-		// verify searchRange
-		assert.Equal(b, a.one, res,
-			"fail: in [ %v , %v ], out [%v] , want [ %v ]", p.one, p.two, res, a.one)
+		searchRange(q.param.one, q.param.two)
 	}
 }
 

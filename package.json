@@ -1,0 +1,27 @@
+{
+  "name": "leetcode-go",
+  "version": "v1.0.0",
+  "description": "leetcode golang",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sinlov/leetcode-go.git"
+  },
+  "keywords": [
+    "leetcode",
+    "golang",
+    "unit-test"
+  ],
+  "author": "sinlov",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "git+ssh://git@github.com/sinlov/leetcode-go.git"
+  },
+  "homepage": "https://github.com/sinlov/leetcode-go#readme"
+}

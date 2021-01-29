@@ -40,9 +40,11 @@ $ echo "go mod vendor"
 
 - golang sdk 1.15+
 
-# dev
+## dev
 
 ```bash
+make help
+# first run as
 make init
 ```
 

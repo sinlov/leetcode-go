@@ -72,7 +72,7 @@ namespace :leetcode do
       abort("rake aborted! #{target_src_file} not overwrite") if ask("#{target_src_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
     end
     puts "Creating #{problems_title} source: #{target_src_file}"
-    open(target_src_file, 'w') do |post|
+    open(target_src_file, 'w:utf-8') do |post|
       post.puts "package #{target_package_name}"
       post.puts ""
       post.puts "func #{problems_func}(s string) int {"
@@ -108,7 +108,7 @@ namespace :leetcode do
       abort("rake aborted! #{target_test_file} not overwrite") if ask("#{target_test_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
     end
     puts "Creating #{problems_title} unit test: #{target_test_file}"
-    open(target_test_file, 'w') do |post|
+    open(target_test_file, 'w:utf-8') do |post|
       post.puts "package #{target_package_name}"
       post.puts ""
       post.puts "import ("
@@ -190,7 +190,7 @@ namespace :leetcode do
     if File.exist?(target_answer_file)
       abort("rake aborted! #{target_answer_file} not overwrite") if ask("#{target_answer_file} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
     end
-    open(target_answer_file, 'w') do |post|
+    open(target_answer_file, 'w:utf-8') do |post|
       post.puts "### 解题思路"
       post.puts ""
       post.puts ""

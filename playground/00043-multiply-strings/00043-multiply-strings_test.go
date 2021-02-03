@@ -11,6 +11,13 @@ import (
 var qs = []question{
 	{
 		param{
+			one: "789",
+			two: "456",
+		},
+		answer{"359784"},
+	},
+	{
+		param{
 			one: "123",
 			two: "456",
 		},

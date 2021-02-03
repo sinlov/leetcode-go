@@ -30,6 +30,9 @@ func multiply(num1 string, num2 string) string {
 
 	// max length 200
 	for i := 0; i < 200; i++ {
+		if i > len(cacheMap) {
+			break
+		}
 		if v := cacheMap[i]; v > 9 {
 			carry := v / 10
 			cacheMap[i] = v % 10

@@ -135,8 +135,12 @@ testCoverage:
 	@echo "=> run test coverage start"
 	@GO111MODULE=on go test -cover -coverprofile=coverage.txt -covermode=atomic -v $(ROOT_TEST_LIST)
 
-testCoverageBrowser: testCoverage
-	@GO111MODULE=on go tool cover -html=coverage.txt
+testCoverageBrowser:
+	@if [ ! -z ${TEST_BROWSER} ]; \
+	then go list ./... | grep "${TEST_BROWSER}" | xargs go test -cover -coverprofile=coverage.txt -covermode=atomic -v ; \
+	else go test -cover -coverprofile=coverage.txt -covermode=atomic -v $(ROOT_TEST_LIST) ; \
+	fi
+	go tool cover -html=coverage.txt
 
 testBenchmark:
 	@echo "=> run test benchmark start"
@@ -155,7 +159,7 @@ helpProjectRoot:
 	@echo "~> make clean               - remove binary file and log files"
 	@echo "~> make test                - run test case ignore --invert-match $(ROOT_TEST_INVERT_MATCH)"
 	@echo "~> make testCoverage        - run test coverage case ignore --invert-match $(ROOT_TEST_INVERT_MATCH)"
-	@echo "~> make testCoverageBrowser - see coverage at browser --invert-match $(ROOT_TEST_INVERT_MATCH)"
+	@echo "~> make testCoverageBrowser - see coverage at browser --invert-match $(ROOT_TEST_INVERT_MATCH) can cover as: export TEST_BROWSER=00001-two-sum "
 	@echo "~> make testBenchmark       - run go test benchmark case all"
 	@echo "~> make dev                 - run as develop"
 

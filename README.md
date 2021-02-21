@@ -4,7 +4,7 @@
 
 ## for what
 
-- this project for [leetcode-cn](https://leetcode-cn.com/) in go
+- this project for [leetcode-cn sinlov](https://leetcode-cn.com/u/sinlov/) in go
 - project repo [https://github.com/sinlov/leetcode-go](https://github.com/sinlov/leetcode-go)
 
 ## depends

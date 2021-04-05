@@ -205,4 +205,4 @@ namespace :leetcode do
 end
 
 desc "playground env: num=7 title=reverse-integer func=reverse"
-task :leetcode => ['leetcode:src', 'leetcode:test', 'leetcode:answer']
+task :leetcode => ['leetcode:src', 'leetcode:answer', 'leetcode:test']
